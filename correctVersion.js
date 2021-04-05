@@ -117,8 +117,8 @@
   })
 
   player1Btn.addEventListener('click', () => {
-    const luckyNumber = checkLuckyNumBeforePlay()
-    if (!luckyNumber) return
+    const isLuckyNumberDefined = checkLuckyNumBeforePlay()
+    if (!isLuckyNumberDefined) return
 
     player1.number = Math.floor(Math.random() * 10) + 1
     player1GuessNoDisplay.textContent = player1.number
@@ -129,12 +129,12 @@
     getDefaultPlayState()
 
     disablePlayerBtn('player1')
-    checkWinner(player1.number, luckyNumber, player1)
+    checkWinner(player1.number, luckyNumber, 'player1')
   })
 
   player2Btn.addEventListener('click', () => {
-    const luckyNumber = checkLuckyNumBeforePlay()
-    if (!luckyNumber) return
+    const isLuckyNumberDefined = checkLuckyNumBeforePlay()
+    if (!isLuckyNumberDefined) return
 
     player2.number = Math.floor(Math.random() * 10) + 1
     player2GuessNoDisplay.textContent = player2.number
@@ -144,7 +144,7 @@
     disablePlayerBtn('player2')
     getDefaultPlayState()
 
-    checkWinner(player2.number, luckyNumber, player2)
+    checkWinner(player2.number, luckyNumber, 'player2')
   })
 
   resetBtn.addEventListener('click', reset)
